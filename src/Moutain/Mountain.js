@@ -8,8 +8,8 @@ function Mountain({mountains}){
 const mountainCards = mountains.map(mountain => {
    return (
        <Card
-       title={mountain.title}
-       description={mountain.description}
+       state={mountain.state}
+       snippet={mountain.snippet}
        id={mountain.id}
        key={mountain.id}
        />
