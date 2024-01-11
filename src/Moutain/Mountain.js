@@ -1,11 +1,11 @@
-import Card from '../Card/Card';
+import Card from '../Card/Card.js';
 import './Mountain.css';
 
 
-function Mountain({ mountains}){
+function Mountain({mountains}){
 
 
-const MountainCards = mountains.map(mountain => {
+const mountainCards = mountains.map(mountain => {
    return (
        <Card
        title={mountain.title}
@@ -17,7 +17,7 @@ const MountainCards = mountains.map(mountain => {
 })
  return (
    <div className='mountains-container'>
-     {MountainCards}
+     {mountainCards}
    </div>
  )
 }
