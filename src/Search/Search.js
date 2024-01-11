@@ -30,14 +30,14 @@ function Search(addIdea){
        placeholder="someShit"
        name="title"
        value={title}
-       onClick={event => setTitle(event.target.value)}
+       onChange={event => setTitle(event.target.value)}
        />
        <input
        type="text"
        placeholder="Descript This"
        name="description"
        value={description}
-       onClick={event => setDescription(event.target.value)}
+       onChange={event => setDescription(event.target.value)}
        />
 
 
