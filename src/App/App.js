@@ -5,12 +5,12 @@ import { useState } from 'react'
 
 
 function App(){
- const dummyIdeas = [
-       { id: 1, title: 'Prank Travis', description: 'Stick googly eyes on all his stuff' },
-       { id: 2, title: 'Make a secret password app', description: 'So you and your rideshare driver can both know neither one of you is lying' },
-       { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' },
+ const dummyData = [
+       { id: 1, state: 'New York', snippet: 'Mt. Marcy' },
+       { id: 2, state: 'New Jersey', snippet: 'High Point' },
+       { id: 3, state: 'Vermont', snippet: 'Mt. Mansfield' },
    ]
- const [mountains, setMountain] = useState(dummyIdeas)
+ const [mountains, setMountain] = useState(dummyData)
   
  function searchState(searchState) { //will need to pull from data object 
     setMountain([...mountains, searchState])
