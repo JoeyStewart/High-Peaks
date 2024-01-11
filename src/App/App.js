@@ -11,15 +11,16 @@ function App(){
        { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' },
    ]
  const [mountains, setMountain] = useState(dummyIdeas)
-  function addIdea (newIdea) {
-    setMountain([...mountains, newIdea])
+  
+ function searchState (searchState) { //will need to pull from data object 
+    setMountain([...mountains, searchState])
  }
 
 
  return(
    <main className='App'>
        <h1>High Peaks</h1>
-       <Search addIdea={addIdea}/>
+       <Search searchState={searchState}/>
        <Mountain mountains={mountains}/>
    </main>
  )
