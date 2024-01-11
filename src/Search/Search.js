@@ -3,15 +3,15 @@ import './Search.css';
 
 
 function Search(addIdea){
- const [title, setTitle] = useState("");
+ const [usState, setUSState] = useState("");
  const [description, setDescription] = useState("");
 
 
- function submitNewIdea(event) {
+ function searchMountain(event) {
    event.preventDefault()
    const newIdea = {
        id: Date.now(),
-       title,
+       usState,
        description
    }
    addIdea(newIdea)
@@ -20,17 +20,17 @@ function Search(addIdea){
 
 
  function emptyInput(){
-   setTitle("")
+    setUSState("")
    setDescription("")
  }
  return (
    <form>
        <input
        type="text"
-       placeholder="someShit"
-       name="title"
-       value={title}
-       onChange={event => setTitle(event.target.value)}
+       placeholder="U.S. State"
+       name="state"
+       value={usState}
+       onChange={event => setUSState(event.target.value)}
        />
        <input
        type="text"
@@ -41,7 +41,7 @@ function Search(addIdea){
        />
 
 
-       <button onClick = { event => submitNewIdea(event)}>Submissive</button>
+       <button onClick = { event => searchMountain(event)}>Submissive</button>
    </form>
  )
 }
