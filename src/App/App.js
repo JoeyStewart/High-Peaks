@@ -12,7 +12,7 @@ function App(){
    ]
  const [mountains, setMountain] = useState(dummyIdeas)
   
- function searchState (searchState) { //will need to pull from data object 
+ function searchState(searchState) { //will need to pull from data object 
     setMountain([...mountains, searchState])
  }
 
