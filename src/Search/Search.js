@@ -3,14 +3,12 @@ import './Search.css';
 
 function Search({ searchState }) { 
   const [usState, setUSState] = useState("");
-  const [description, setDescription] = useState("");
 
   function searchMountain(event) {
     event.preventDefault();
     const findMountain = {
       id: Date.now(),
       usState,
-      description,
     };
     searchState(findMountain);
     emptyInput();
@@ -18,7 +16,6 @@ function Search({ searchState }) {
 
   function emptyInput() {
     setUSState("");
-    setDescription("");
   }
 
   return (
@@ -30,15 +27,7 @@ function Search({ searchState }) {
         value={usState}
         onChange={(event) => setUSState(event.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Descript This"
-        name="description"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-
-      <button onClick={(event) => searchMountain(event)}>Submissive</button>
+      <button onClick={(event) => searchMountain(event)}>Search</button>
     </form>
   );
 }
