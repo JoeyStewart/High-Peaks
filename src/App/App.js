@@ -17,7 +17,7 @@ function App() {
     const matchingPeak = dataObject ? dataObject.mountain : null;
     console.log(matchingPeak);
 
-    // If there's a matching peak, fetch data from the API
+  
     if (matchingPeak) {
       try {
         const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=1&srsearch=${matchingPeak}`;
