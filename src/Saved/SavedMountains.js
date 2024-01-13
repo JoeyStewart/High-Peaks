@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 
-function SavedArticles({ savedArticles }) {
+function savedArticles({ savedArticles }) {
     return (
       <div>
         <h1>Favorite Mountains</h1>
@@ -17,4 +17,4 @@ function SavedArticles({ savedArticles }) {
     );
   }
 
-export default SavedArticles
+export default savedArticles
