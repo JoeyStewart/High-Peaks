@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Search from '../Search/Search';
-import Mountain from '../Moutain/Mountain.js';
+import Mountain from '../Moutain/Mountain.js'
+import savedArticles from '../Saved/SavedMountains.js';
+import {Routes, Route, Link } from 'react-router-dom';
 import stateData from '../Data/Data.js';
 import './App.css';
 
 function App() {
 
   const [mountain, setMountain] = useState(null);
+  const [savedMountains, setSavedMountains] = useState([]);
+
+  function saveArticle(article) {
+    setSavedMountains([...savedMountains, article]);
+  }
 
   async function searchState(newSearchState) {
     console.log(newSearchState);
@@ -50,11 +57,24 @@ function App() {
   }
 
   return (
-    <main className='App'>
-      <h1>High Peaks</h1>
-      <Search searchState={searchState} />
-      <Mountain mountain={mountain} />
-    </main>
+    <Routes>
+      <main className='App'>
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/saved'>Saved Articles</Link>
+        </nav>
+        <h1>High Peaks</h1>
+        <Route exact path='/'>
+          <div>
+            <Search searchState={searchState} />
+            <Mountain mountain={mountain} saveArticle={saveArticle} />
+          </div>
+        </Route>
+        <Route path='/saved'>
+          <savedArticles savedArticles={savedArticles} />
+        </Route>
+      </main>
+    </Routes>
   );
 }
 
