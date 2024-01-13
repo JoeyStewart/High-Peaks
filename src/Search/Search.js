@@ -1,16 +1,22 @@
 import { useState } from 'react';
 import './Search.css';
 
-function Search({ searchState }) { 
+function Search({ searchState }) {
   const [usState, setUSState] = useState("");
 
-  function searchMountain(event) {
+  async function searchMountain(event) {
     event.preventDefault();
     const findMountain = {
-      id: Date.now(),
-      usState,
+        mountain: usState, 
     };
-    searchState(findMountain);
+    console.log(findMountain.mountain)
+    try {
+      const matchingPeak = await searchState(findMountain.mountain);
+      console.log("Matching Peak:", matchingPeak);
+    } catch (error) {
+      console.error("Search operation failed:", error);
+    }
+
     emptyInput();
   }
 
