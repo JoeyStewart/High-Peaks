@@ -108,32 +108,26 @@ function App() {
 
   return (
     <main className='App'>
-    <h1>High Peaks</h1>
-    <Search searchState={searchState} />
-    <nav>
-      <Link to='/saved'>Saved Articles_</Link>
-      <Link to='/'>Home</Link>
-    </nav>
-    <Routes>
-      <Route
-        path='/peaks/:peak'
-        element={<Mountain mountain={mountain} />}
-      />
-    </Routes>
-    {location.pathname !== '/saved' && (
+      <h1>High Peaks</h1>
+      <Search searchState={searchState}/>
+      <nav>
+        <Link to='/saved'>Saved Articles_</Link>
+        <Link to='/'>Home</Link>
+      </nav>
+      <Routes>
+        <Route path='/peaks/:peak' element={<Mountain mountain={mountain} />}/>
+        {showCard && location.pathname !== '/saved' && (
+        <Route path='/peaks/:peak' element={<Card saveArticle={saveArticle} />}/>
+        )}
+      </Routes>
+      {location.pathname === '/' && mountain && (
       <Mountain mountain={mountain} />
-    )}
-    {showCard && location.pathname !== '/saved' && (
-      <Card saveArticle={saveArticle} />
-    )}
-    <Routes>
-      <Route
-        path='/saved'
-        element={<SavedArticles savedMountains={savedMountains} />}
-      />
-    </Routes>
-  </main>
-);
-}
+      )}
+      <Routes>
+        <Route path='/saved' element={<SavedArticles savedMountains={savedMountains}/>}/>
+      </Routes>
+    </main>
+  );
+      }
 
 export default App;
