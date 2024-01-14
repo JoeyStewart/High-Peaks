@@ -1,1 +1,23 @@
-
+{
+    "batchcomplete": "",
+    "continue": {
+        "sroffset": 1,
+        "continue": "-||"
+    },
+    "query": {
+        "searchinfo": {
+            "totalhits": 5223
+        },
+        "search": [
+            {
+                "ns": 0,
+                "title": "List of the highest major summits of the United States",
+                "pageid": 50045486,
+                "size": 172044,
+                "wordcount": 13954,
+                "snippet": "feet), and <span class=\"searchmatch\">the</span> following 477 <span class=\"searchmatch\">major</span> <span class=\"searchmatch\">summits</span> exceed 3000 meters (9843 feet) elevation. A total <span class=\"searchmatch\">of</span> 477 mountain <span class=\"searchmatch\">summits</span> in <span class=\"searchmatch\">the</span> <span class=\"searchmatch\">United</span> <span class=\"searchmatch\">States</span> meet both criteria",
+                "timestamp": "2023-12-26T02:21:07Z"
+            }
+        ]
+    }
+}
