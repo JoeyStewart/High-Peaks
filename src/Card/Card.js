@@ -5,7 +5,7 @@ function Card({ state, snippet, mountain, handleSave, id }) {
  
   return (
     <div className='card'>
-      <button onClick={()=>handleSave(state, mountain, snippet, id)}>Save</button>
+      <button class="save-button" onClick={()=>handleSave(state, mountain, snippet, id)}>Save</button>
       <h2>{state}</h2>
       <h3>{mountain}</h3>
       <p>{snippet}</p>

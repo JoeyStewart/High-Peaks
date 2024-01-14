@@ -1,0 +1,25 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "sroffset": 1,
+        "continue": "-||"
+    },
+    "query": {
+        "searchinfo": {
+            "totalhits": 1045,
+            "suggestion": "mt mansfield",
+            "suggestionsnippet": "<em>mt mansfield</em>"
+        },
+        "search": [
+            {
+                "ns": 0,
+                "title": "Mount Mansfield",
+                "pageid": 502286,
+                "size": 17963,
+                "wordcount": 1494,
+                "snippet": "<span class=\"searchmatch\">Mt</span>. <span class=\"searchmatch\">Mansfield</span> from Underhill, Vermont. <span class=\"searchmatch\">Mansfield</span> from north of Stowe, Vermont. <span class=\"searchmatch\">Mansfield</span> from toll road. Rime ice in the Krummholz zone of <span class=\"searchmatch\">Mansfield</span>.",
+                "timestamp": "2023-12-29T02:49:09Z"
+            }
+        ]
+    }
+}
