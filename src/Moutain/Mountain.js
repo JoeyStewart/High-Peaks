@@ -3,7 +3,7 @@ import React from 'react';
 import Card from '../Card/Card.js';
 import './Mountain.css';
 
-function Mountain({ mountain }) {
+function Mountain({ mountain, saveArticle }) {
   if (!mountain) {
     return null;
   }
@@ -22,6 +22,7 @@ function Mountain({ mountain }) {
         mountain={mountain.mountain}
         snippet={fullArticleText}
         id={mountain.id}
+        saveArticle={saveArticle}
       />
     </div>
   );
