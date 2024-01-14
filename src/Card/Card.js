@@ -2,8 +2,7 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 function Card({ state, snippet, mountain, handleSave, id }) {
-  console.log('Props received in Card:', { state, snippet, mountain, handleSave, id });
-console.log(handleSave)
+ 
   return (
     <div className='card'>
       <button onClick={()=>handleSave(state, mountain, snippet, id)}>Save</button>
