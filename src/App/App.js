@@ -14,11 +14,23 @@ function App() {
   const [savedMountains, setSavedMountains] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-
+  
   const saveArticle = (article) => {
-    setSavedMountains((savedMountains) => [...savedMountains, article]);
+    setSavedMountains([...savedMountains, article]);
+  };
+  
+  const handleSave = (state, mountain, snippet, id) => {
+    console.log("saving")
+    const article = {
+      state,
+      mountain,
+      snippet,
+      id,
+    };
+    saveArticle(article);
   };
 
+console.log(handleSave)
   const searchState = async (newSearchState) => {
     const searchString = newSearchState.toString().toLowerCase();
 
@@ -106,6 +118,7 @@ function App() {
     onLoadArticle();
   }, []);
 
+  
   return (
     <main className='App'>
       <h1>High Peaks</h1>
@@ -115,19 +128,22 @@ function App() {
         <Link to='/'>Home</Link>
       </nav>
       <Routes>
-        <Route path='/peaks/:peak' element={<Mountain mountain={mountain} />}/>
-        {showCard && location.pathname !== '/saved' && (
-        <Route path='/peaks/:peak' element={<Card saveArticle={saveArticle} />}/>
-        )}
+        <Route
+          path='/saved'
+          element={
+            location.pathname === '/saved' ? (
+              <SavedArticles savedMountains={savedMountains} />
+            ) : null
+          }
+        />
       </Routes>
-      {location.pathname === '/' && mountain && (
-      <Mountain mountain={mountain} />
+      {showCard && location.pathname !== '/saved' && mountain && (
+        <div className='mountains-container'>
+          <Mountain mountain={mountain} handleSave={handleSave} />
+        </div>
       )}
-      <Routes>
-        <Route path='/saved' element={<SavedArticles savedMountains={savedMountains}/>}/>
-      </Routes>
     </main>
   );
-      }
+}
 
 export default App;
