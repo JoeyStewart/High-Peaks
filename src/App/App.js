@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Search from '../Search/Search';
 import Mountain from '../Moutain/Mountain.js';
 import SavedArticles from '../Saved/SavedMountains.js'; 
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, useLocation, useNavigate  } from 'react-router-dom';
 import stateData from '../Data/Data.js';
 import peakData from '../Data/peakData.js';
 import Card from '../Card/Card.js';
@@ -13,11 +13,24 @@ function App() {
   const [showCard, setShowCard] = useState(false);
   const [savedMountains, setSavedMountains] = useState([]);
   const location = useLocation();
-
+  const navigate = useNavigate();
+  
   const saveArticle = (article) => {
-    setSavedMountains((savedMountains) => [...savedMountains, article]);
+    setSavedMountains([...savedMountains, article]);
+  };
+  
+  const handleSave = (state, mountain, snippet, id) => {
+    console.log("saving")
+    const article = {
+      state,
+      mountain,
+      snippet,
+      id,
+    };
+    saveArticle(article);
   };
 
+console.log(handleSave)
   const searchState = async (newSearchState) => {
     const searchString = newSearchState.toString().toLowerCase();
 
@@ -47,6 +60,8 @@ function App() {
             mountain: matchingResult.title,
             snippet: articleData.parse.text['*'],
           });
+          navigate(`/peaks/${matchingPeak}`);
+
           setShowCard(true);
         } else {
           setMountain(null);
@@ -103,26 +118,30 @@ function App() {
     onLoadArticle();
   }, []);
 
+  
   return (
     <main className='App'>
       <h1>High Peaks</h1>
-      <Search searchState={searchState} />
+      <Search searchState={searchState}/>
       <nav>
         <Link to='/saved'>Saved Articles_</Link>
         <Link to='/'>Home</Link>
       </nav>
-      {location.pathname !== '/saved' && (
-        <Mountain mountain={mountain} />
-      )}
-      {showCard && location.pathname !== '/saved' && (
-        <Card saveArticle={saveArticle} />
-      )}
       <Routes>
         <Route
           path='/saved'
-          element={<SavedArticles savedMountains={savedMountains} />}
+          element={
+            location.pathname === '/saved' ? (
+              <SavedArticles savedMountains={savedMountains} />
+            ) : null
+          }
         />
       </Routes>
+      {showCard && location.pathname !== '/saved' && mountain && (
+        <div className='mountains-container'>
+          <Mountain mountain={mountain} handleSave={handleSave} />
+        </div>
+      )}
     </main>
   );
 }
