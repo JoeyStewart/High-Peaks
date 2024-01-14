@@ -108,7 +108,7 @@ function App() {
       <h1>High Peaks</h1>
       <Search searchState={searchState} />
       <nav>
-        <Link to='/saved'>Saved Articles</Link>
+        <Link to='/saved'>Saved Articles_</Link>
         <Link to='/'>Home</Link>
       </nav>
       {location.pathname !== '/saved' && (
