@@ -1,4 +1,4 @@
-describe('API pull main article onto screen', () => {
+describe('API stubbing', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000/');
         cy.intercept(
