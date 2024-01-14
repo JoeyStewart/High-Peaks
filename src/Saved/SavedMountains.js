@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 function SavedArticles({ savedMountains }) {
   console.log(savedMountains)
@@ -17,5 +18,17 @@ function SavedArticles({ savedMountains }) {
     </div>
   );
 }
+
+SavedArticles.propTypes = {
+  savedMountains: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      state: PropTypes.string.isRequired,
+      mountain: PropTypes.string.isRequired,
+      snippet: PropTypes.string.isRequired,
+    })
+  ),
+};
+
 
 export default SavedArticles;
