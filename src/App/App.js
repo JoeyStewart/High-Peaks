@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Search from '../Search/Search';
 import Mountain from '../Moutain/Mountain.js';
-import SavedArticles from '../Saved/SavedMountains.js'; 
-import { Routes, Route, Link, useLocation, useNavigate  } from 'react-router-dom';
+import SavedArticles from '../Saved/SavedMountains.js';
+import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import stateData from '../Data/Data.js';
 import peakData from '../Data/peakData.js';
-import Card from '../Card/Card.js';
 import './App.css';
 
 function App() {
@@ -14,13 +13,13 @@ function App() {
   const [savedMountains, setSavedMountains] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const saveArticle = (article) => {
     setSavedMountains([...savedMountains, article]);
   };
-  
+
   const handleSave = (state, mountain, snippet, id) => {
-    console.log("saving")
+    console.log('saving');
     const article = {
       state,
       mountain,
@@ -30,7 +29,6 @@ function App() {
     saveArticle(article);
   };
 
-console.log(handleSave)
   const searchState = async (newSearchState) => {
     const searchString = newSearchState.toString().toLowerCase();
 
@@ -60,9 +58,8 @@ console.log(handleSave)
             mountain: matchingResult.title,
             snippet: articleData.parse.text['*'],
           });
-          navigate(`/peaks/${matchingPeak}`);
-
           setShowCard(true);
+          navigate(`/peaks/${matchingPeak}`);
         } else {
           setMountain(null);
           setShowCard(false);
@@ -114,18 +111,24 @@ console.log(handleSave)
     }
   };
 
+  const loadArticleAndNavigate = async () => {
+    await onLoadArticle();
+    navigate('/');
+  };
+
   useEffect(() => {
-    onLoadArticle();
+    loadArticleAndNavigate();
   }, []);
 
-  
   return (
     <main className='App'>
       <h1>High Peaks</h1>
-      <Search searchState={searchState}/>
+      <Search searchState={searchState} />
       <nav>
         <Link to='/saved'>Saved Articles_</Link>
-        <Link to='/'>Home</Link>
+        <Link to='/' onClick={loadArticleAndNavigate}>
+          Home
+        </Link>
       </nav>
       <Routes>
         <Route
