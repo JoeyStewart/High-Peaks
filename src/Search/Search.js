@@ -28,13 +28,13 @@ function Search({ searchState }) {
   return (
     <form>
       <input
-        type="text"
+        type="search"
         placeholder="U.S. State"
         name="state"
         value={usState}
         onChange={(event) => setUSState(event.target.value)}
       />
-      <button onClick={(event) => searchMountain(event)}>Search</button>
+      <button class="search-button" onClick={(event) => searchMountain(event)}>Search</button>
     </form>
   );
 }
