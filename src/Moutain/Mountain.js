@@ -7,8 +7,9 @@ function Mountain({ mountain, handleSave }) {
   if (!mountain) {
     return null;
   }
-  const fullArticleText =  <p className='article-content' dangerouslySetInnerHTML={{ __html: mountain.snippet }} />
   
+  const fullArticleText = <p className='article-content' dangerouslySetInnerHTML={{ __html: mountain.snippet }} />
+
   return (
     <div className='mountains-container'>
       <Card
@@ -16,7 +17,7 @@ function Mountain({ mountain, handleSave }) {
         mountain={mountain.mountain}
         snippet={fullArticleText}
         id={mountain.id}
-        handleSave={handleSave} 
+        handleSave={handleSave}
       />
     </div>
   );
@@ -29,6 +30,7 @@ Mountain.propTypes = {
     snippet: PropTypes.element.isRequired,
     id: PropTypes.number.isRequired,
   }),
+  handleSave: PropTypes.func.isRequired,
 };
 
 export default Mountain;
