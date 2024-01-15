@@ -1,0 +1,7 @@
+.fav{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+    border-radius: 8px;  
+}
