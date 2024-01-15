@@ -1,14 +1,23 @@
+import React, { useState } from 'react';
 import './Card.css';
 import PropTypes from 'prop-types';
 
 function Card({ state, snippet, mountain, handleSave, id }) {
- 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpansion = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
-    <div className='card'>
-      <button class="save-button" onClick={()=>handleSave(state, mountain, snippet, id)}>Save</button>
+    <div className={`card ${isExpanded ? 'expanded' : ''}`} onClick={toggleExpansion}>
       <h2>{state}</h2>
       <h3>{mountain}</h3>
-      <p>{snippet}</p>
+      {isExpanded && <p className="expanded-content">{snippet}</p>}
+      <p className="read-article-text">Click Card to Read Article</p>
+      <button className="save-button" onClick={() => handleSave(state, mountain, snippet, id)}>
+        Save
+      </button>
     </div>
   );
 }
