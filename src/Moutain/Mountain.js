@@ -7,8 +7,13 @@ function Mountain({ mountain, handleSave }) {
   if (!mountain) {
     return null;
   }
-  
-  const fullArticleText = <p className='article-content' dangerouslySetInnerHTML={{ __html: mountain.snippet }} />
+
+  const fullArticleText = (
+    <div
+      className='article-content'
+      dangerouslySetInnerHTML={{ __html: mountain.snippet }}
+    />
+  );
 
   return (
     <div className='mountains-container'>
@@ -17,7 +22,7 @@ function Mountain({ mountain, handleSave }) {
         mountain={mountain.mountain}
         snippet={fullArticleText}
         id={mountain.id}
-        handleSave={handleSave}
+        handleSave={handleSave} 
       />
     </div>
   );
