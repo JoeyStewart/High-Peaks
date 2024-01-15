@@ -26,8 +26,9 @@ function Search({ searchState }) {
   }
 
   return (
-    <form>
+    <form >
       <input
+        class="state-input"
         type="search"
         placeholder="U.S. State"
         name="state"

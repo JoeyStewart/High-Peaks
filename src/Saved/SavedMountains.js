@@ -3,10 +3,10 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
 function SavedArticles({ savedMountains }) {
-  console.log(savedMountains)
+
   return (
     <div>
-      <h1>Favorite Mountains</h1>
+      <h1 class="fav">Favorite Mountains</h1>
       {savedMountains.map((article) => (
         <Card
           key={article.id}
