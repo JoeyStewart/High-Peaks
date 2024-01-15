@@ -31,7 +31,7 @@ The project also provides a robust testing suite using Cypress, ensuring the pro
 
 ## Preview of App:
 
-https://files.slack.com/files-pri/T029P2S9M-F06DV35P2CT/high-peaks.gif
+<iframe src="https://giphy.com/embed/HnFcDZ0G8ajS1t23Ds" width="480" height="252" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/HnFcDZ0G8ajS1t23Ds">via GIPHY</a></p>
 
 ## Context:
 This was the final solo project in Mod 3. I used fetch requests to pull data so that I could manipulate wikipedia data onto the display in the form of cards that a user could manipulate. The purpose was this was to provide data on the tallest mountain within each US state and providing a page where a user could save any article they find interesting. I had 7 days to complete the project and spent about 30 cumulatively hours working to complete the project in its current form. Part of the difficulty of the project was from refining concepts such as React, routing, and Cypress testing. Though they did come much easier this project than in previous ones. The project remained on schedule. I had far more ambitious plans for this project, but with how I am continuing to settle in with these concepts, I am excited to see the future of this application in its final form.
