@@ -13,7 +13,8 @@ The project also provides a robust testing suite using Cypress, ensuring the pro
 
 ## Application link:
 
-[High Peaks GitHub Repository](https://github.com/JoeyStewart/High-Peaks)
+![High-Peaks](https://github.com/JoeyStewart/High-Peaks/assets/140363136/8063d2e6-fc62-4425-b16a-8a944eff4540)
+
 
 ## Installation Instructions:
 1. Click the green `code` button.
