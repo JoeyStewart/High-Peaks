@@ -52,13 +52,13 @@ function App() {
         const matchingResult = searchData.query.search[0];
 
         if (matchingResult) {
-          const pageId = matchingResult.pageid;
-          const articleUrl = `https://en.wikipedia.org/w/api.php?action=parse&pageid=${pageId}&format=json&origin=*`;
+          const pageID = matchingResult.pageid;
+          const articleUrl = `https://en.wikipedia.org/w/api.php?action=parse&pageid=${pageID}&format=json&origin=*`;
           const articleResponse = await fetch(articleUrl);
           const articleData = await articleResponse.json();
-
+        
           setMountain({
-            id: pageId,
+            id: pageID,
             state: newSearchState,
             mountain: matchingResult.title,
             snippet: articleData.parse.text['*'],
@@ -163,3 +163,7 @@ return (
 );
 }
 export default App;
+
+
+
+
