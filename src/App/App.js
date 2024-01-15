@@ -120,33 +120,41 @@ function App() {
     loadArticleAndNavigate();
   }, []);
 
-  return (
-    <main className='App'>
-      <h1>High Peaks</h1>
+return (
+  <main className='App'>
+    <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet"></link>
+    <div className="header">
+      <h1 className="high-peaks">High Peaks</h1>
       <Search searchState={searchState} />
-      <nav>
-        <Link to='/saved'>Saved Articles_</Link>
-        <Link to='/' onClick={loadArticleAndNavigate}>
-          Home
-        </Link>
-      </nav>
-      <Routes>
-        <Route
-          path='/saved'
-          element={
-            location.pathname === '/saved' ? (
-              <SavedArticles savedMountains={savedMountains} />
-            ) : null
-          }
-        />
-      </Routes>
-      {showCard && location.pathname !== '/saved' && mountain && (
-        <div className='mountains-container'>
-          <Mountain mountain={mountain} handleSave={handleSave} />
+      <div className="nav-container">
+        <div className="nav-item">
+          <Link className="saved-articles" to='/saved'>Saved Articles</Link>
         </div>
-      )}
-    </main>
-  );
+        <div className="nav-item">
+          <Link className="home" to='/' onClick={loadArticleAndNavigate}>
+            Home
+          </Link>
+        </div>
+      </div>
+    </div>
+    <Routes>
+      <Route
+        path='/saved'
+        element={
+          location.pathname === '/saved' ? (
+            <SavedArticles savedMountains={savedMountains} />
+          ) : null
+        }
+      />
+    </Routes>
+    {showCard && location.pathname !== '/saved' && mountain && (
+      <div className='mountains-container'>
+        <Mountain mountain={mountain} handleSave={handleSave} />
+      </div>
+    )}
+  </main>
+);
 }
-
 export default App;
