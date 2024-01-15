@@ -31,12 +31,17 @@ function App() {
 
   const searchState = async (newSearchState) => {
     const searchString = newSearchState.toString().toLowerCase();
-
+  
     const dataObject = stateData.find(
       (mountain) => mountain.state.toLowerCase() === searchString
     );
-
-    const matchingPeak = dataObject ? dataObject.mountain : null;
+  
+    if (!dataObject) {
+      alert("Please enter a valid U.S. state for the search.");
+      return;
+    }
+  
+    const matchingPeak = dataObject.mountain;
 
     if (matchingPeak) {
       try {
