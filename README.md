@@ -29,6 +29,7 @@ The project also provides a robust testing suite using Cypress, ensuring the pro
 10. Copy the link it provides. It will look like similiar to this: http://localhost:3000/#/
 11. Paste it into your web browser of choice
 12. Enjoy!
+13. Or, you can click this deployed link here https://high-peaks.vercel.app/
 
 ## Preview of App:
 
