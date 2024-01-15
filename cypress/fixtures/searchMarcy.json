@@ -1,25 +1,23 @@
 {
-  "batchcomplete": "",
-  "continue": {
-      "sroffset": 1,
-      "continue": "-||"
-  },
-  "query": {
-      "searchinfo": {
-          "totalhits": 467,
-          "suggestion": "mt.mary",
-          "suggestionsnippet": "mt.mary"
-      },
-      "search": [
-          {
-              "ns": 0,
-              "title": "Mount Marcy",
-              "pageid": 577223,
-              "size": 16069,
-              "wordcount": 1178,
-              "snippet": "19. Mount <span class=\"searchmatch\">Marcy</span> (photo taken from Mount Haystack, looking across Panther Gorge) Summit of Mount <span class=\"searchmatch\">Marcy</span> seen from near <span class=\"searchmatch\">Mt</span>.Skylight. Mount <span class=\"searchmatch\">Marcy</span> summit Mount",
-              "timestamp": "2024-01-01T01:15:50Z"
-          }
-      ]
-  }
+    "batchcomplete": "",
+    "continue": {
+        "sroffset": 1,
+        "continue": "-||"
+    },
+    "query": {
+        "searchinfo": {
+            "totalhits": 699
+        },
+        "search": [
+            {
+                "ns": 0,
+                "title": "Mount Marcy",
+                "pageid": 577223,
+                "size": 16069,
+                "wordcount": 1178,
+                "snippet": "<span class=\"searchmatch\">Mount</span> <span class=\"searchmatch\">Marcy</span> (Mohawk: Tewawe’éstha) is the highest point in the U.S. state of New York, with an elevation of 5,343.1 feet (1,628.6 m). It is located in",
+                "timestamp": "2024-01-01T01:15:50Z"
+            }
+        ]
+    }
 }
